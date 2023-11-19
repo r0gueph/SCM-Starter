@@ -7,8 +7,9 @@ export default function HomePage() {
   const [account, setAccount] = useState(undefined);
   const [atm, setATM] = useState(undefined);
   const [balance, setBalance] = useState(undefined);
-  const [depositAmount, setDepositAmount] = useState(undefined);
-  const [withdrawAmount, setWithdrawAmount] = useState(undefined);
+
+  const [depositAmount, setDepositAmount] = useState(undefined); //deposit variable
+  const [withdrawAmount, setWithdrawAmount] = useState(undefined); //withdraw variable
 
   const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
   const atmABI = atm_abi.abi;
@@ -57,21 +58,21 @@ export default function HomePage() {
   const getBalance = async () => {
     if (atm) {
       const balance = await atm.getBalance();
-      setBalance(ethers.utils.formatEther(balance));
+      setBalance(ethers.utils.formatEther(balance)); //format ATM Balance
     }
   };
 
-  const deposit = async () => {
+  const deposit = async () => { //deposit manual input
     if (atm) {
       let tx = await atm.deposit(
-        ethers.utils.parseEther(depositAmount.toString())
+        ethers.utils.parseEther(depositAmount.toString()) 
       );
       await tx.wait();
       getBalance();
     }
   };
 
-  const withdraw = async () => {
+  const withdraw = async () => { //withdraw manual input
     if (atm) {
       let tx = await atm.withdraw(
         ethers.utils.parseEther(withdrawAmount.toString())
