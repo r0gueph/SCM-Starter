@@ -1,12 +1,31 @@
-# Starter Next/Hardhat Project
+# ETH+AVAX Assessment Project 2
+This project serves as the assessment for the Smart Contract Management lesson of the ETH+AVAX Course.
 
-After cloning the github, you will want to do the following to get the code running on your computer.
+## Description
+This is the README for the Metacrafter ATM smart contract, a simple financial management tool written in Solidity. The contract provides functionality for depositing and withdrawing funds securely.
 
-1. Inside the project directory, in the terminal type: npm i
-2. Open two additional terminals in your VS code
-3. In the second terminal type: npx hardhat node
-4. In the third terminal, type: npx hardhat run --network localhost scripts/deploy.js
-5. Back in the first terminal, type npm run dev to launch the front-end.
+## Features
+- **Deposit Function:**
+  - Allows the user to manually input the amount they want to deposit.
+  - Allows the owner to securely deposit funds into the account.
+  - Verifies that the sender is the owner before processing the deposit.
+  - Updates the account balance accordingly.
+    
+- **Withdraw Function:**
+  - Allows the user to manually input the amount they want to withdraw.
+  - Permits the owner to securely withdraw funds from the account.
+  - Validates ownership and checks if the withdrawal amount is less than the account balance.
+  - Updates the account balance accordingly.
 
-After this, the project will be running on your localhost. 
-Typically at http://localhost:3000/
+- **Check Balance Function:**
+ - Provides a read-only method, getBalance, to retrieve the current account balance.
+
+## Authors
+
+Zedric Ramoso
+[@r0gueph](https://github.com/r0gueph)
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
